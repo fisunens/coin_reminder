@@ -18,14 +18,17 @@ class CoinReminderApp(App):
         btn2 = Button(text="Напомнить")
         coin_name = TextInput(text="Введи название крипты")
         curr_name = TextInput(text="Введи название валюты")
+        currency = Label(text="1 Dogecoin = 1000 usd")
+        min_curr = TextInput(text="Минимальный порог")
+        max_curr = TextInput(text="Максимальный порог")
 
         layout.add_widget(coin_name)
         layout.add_widget(curr_name)
         layout.add_widget(btn1)
-        layout.add_widget(Widget())
-        layout.add_widget(Widget())
+        layout.add_widget(currency)
+        layout.add_widget(min_curr)
+        layout.add_widget(max_curr)
         layout.add_widget(btn2)
-        layout.add_widget(Widget())
 
         return layout
 
