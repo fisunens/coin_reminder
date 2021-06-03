@@ -1,0 +1,63 @@
+
+
+<Container>:
+    orientation: "vertical"
+    padding: 25
+    spacing: 12
+
+    coin_name: text_1
+    curr: text_2
+    currency: label_1
+    min_c: text_3
+    max_c: text_4
+    view_lim: label_2
+
+    TextInput:
+        id: text_1
+        text: "Крипта"
+        multiline: False
+        font_size: 20
+
+    TextInput:
+        id: text_2
+        text: "Валюта"
+        multiline: False
+        font_size: 20
+
+    Button:
+        text: "Сохранить"
+        font_size: 20
+
+        on_release:
+            root.get_curr()
+            root.view_cur()
+
+
+    Label:
+        id: label_1
+        text: "Здесь будет ваш курс"
+        font_size: 20
+
+    TextInput:
+        id: text_3
+        text: "Минимум"
+        multiline: False
+        font_size: 20
+
+    TextInput:
+        id: text_4
+        text: "Максимум"
+        multiline: False
+        font_size: 20
+
+    Button:
+        text: "Напоминание"
+        font_size: 20
+
+        on_release:
+            root.enter_limit()
+
+    Label:
+        id: label_2
+        text: "Здесь будут лимиты"
+        font_size: 20
