@@ -1,36 +1,42 @@
+import time
+
 from kivy.app import App
-from kivy.config import Config
 from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.button import Button
-from kivy.uix.label import Label
-from kivy.uix.textinput import TextInput
+from pycoingecko import CoinGeckoAPI
 
-Config.set("graphics", "resizable", 0)
-Config.set("graphics", "width", 400)
-Config.set("graphics", "height", 600)
+cg = CoinGeckoAPI()
+coin = ""
+cur = ""
+p = ""
 
 
-class CoinReminderApp(App):
+class Container(BoxLayout):
+    def get_curr(self):
+        global coin
+        global cur
+        coin = self.coin_name.text
+        cur = self.curr.text
+
+    def view_cur(self):
+        sell = cg.get_price(ids=coin, vs_currencies=cur)
+        price = sell.pop(coin)
+        global p
+        p = price[cur]
+        self.currency.text = time.ctime() + " Цена " + coin + " " + str(p) + " " + cur
+
+    def enter_limit(self):
+        if float(p) < float(self.min_c.text):
+            self.view_lim.text = "курс упал ниже " + self.min_c.text
+        elif float(p) > float(self.max_c.text):
+            self.view_lim.text = "курс поднялся выше " + self.max_c.text
+        else:
+            self.view_lim.text = "курс в пределах: от " + self.min_c.text + " до " + self.max_c.text
+
+
+class CoinApp(App):
     def build(self):
-        layout = BoxLayout(orientation="vertical", padding=25, spacing=12)
-        btn1 = Button(text="Принять")
-        btn2 = Button(text="Напомнить")
-        coin_name = TextInput(text="Введи название крипты")
-        curr_name = TextInput(text="Введи название валюты")
-        currency = Label(text="1 Dogecoin = 1000 usd")
-        min_curr = TextInput(text="Минимальный порог")
-        max_curr = TextInput(text="Максимальный порог")
-
-        layout.add_widget(coin_name)
-        layout.add_widget(curr_name)
-        layout.add_widget(btn1)
-        layout.add_widget(currency)
-        layout.add_widget(min_curr)
-        layout.add_widget(max_curr)
-        layout.add_widget(btn2)
-
-        return layout
+        return Container()
 
 
 if __name__ == "__main__":
-    CoinReminderApp().run()
+    CoinApp().run()
