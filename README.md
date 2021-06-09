@@ -22,6 +22,9 @@
 
 
 ## Найближчим часом!!!
+- [ ] Тести
+    - [ ] Написати тести
+    - [ ] Реалізувати помилки і виключення
 - [ ] Інтерфейс 
     - [ ] Вибір мови UA/RU/EN
     - [ ] Можливість збільшення розміру шрифту
@@ -56,6 +59,10 @@
 
 
 ## В ближайшее время!!!
+
+- [ ] Тесты
+    - [ ] Написать тесты
+    - [ ] Реализовать ошибки и исключения
 - [ ] Интерфейс
     - [ ] Выбор языка UA / RU / EN
     - [ ] Возможность увеличения размера шрифта
@@ -108,8 +115,12 @@ will simplify the improvement and modernization of the application. Good documen
 
 
 ## Soon!!!
+
+- [ ] Tests
+    - [ ] Write tests
+    - [ ] Implement errors and exceptions
 - [ ] Interface
-    - [ ] Language selection UA ​​/ RU / EN
+    - [ ] Language selection UA/ RU / EN
     - [ ] Ability to increase the font size
     - [ ] the possible use of blind people
 - [ ] Functionality
