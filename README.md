@@ -94,26 +94,6 @@ will simplify the improvement and modernization of the application. Good documen
 
 ### The Time module is used to display the time of the current course.
 
-
-> ### Application for monitoring the value of cryptocurrency, setting limits on value,
-> ### and a reminder to buy or sell depending on the price.
-
-### The first version of the application was created in the Python 3.8 programming language.
-
-### * The Kivy framework [kivy.org] (https://kivy.org/doc/stable/) was used to create a graphical user interface
-> +++ The Kivy framework for this project came up due to its cross-platform and flexibility, and a large number of widgets, which in the future
-will simplify the improvement and modernization of the application. Good documentation.
-    
-> --- Apart from the official documentation, there is very little information!
-
-### * I take data for checking the rate of cryptocurrencies in real-time from [CoinGecko API] (https://github.com/man-c/pycoingecko)
-> +++ A large number of cryptocurrencies (over 7000), an up-to-date rate, wide API capabilities. There is UAH.
-
-> --- Frequent requests lead to temporary blocking of my IP address, this issue will have to be resolved shortly.
-
-### The Time module is used to display the time of the current course.
-
-
 ## Soon!!!
 
 - [ ] Tests
